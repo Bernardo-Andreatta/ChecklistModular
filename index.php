@@ -1,22 +1,6 @@
 <?php
     require ('conexao.php');
 
-    if(isset($_POST['submit'])){
-        $id = $_POST['id'];
-        $descricao = $_POST['descricao'];
-        $corretiva = $_POST['corretiva'];
-        $ncf = $_POST['ncf'];
-        
-        $sql = "SELECT prazo FROM ncf WHERE nome = :ncf";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue(":ncf", $ncf);
-        $sql->execute();
-        $prazo = $sql->fetch();
-
-        $sql = $pdo->prepare("INSERT INTO `checklist` VALUES(?,?,?,?,?,NULL)");
-        $sql->execute(array($id,$descricao,$ncf,$corretiva,$prazo['prazo']));
-
-    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -72,14 +56,11 @@
                             <td>-</td>
                             <td>-</td>
                             <td>
-                                <button type="submit" name="submit">Enviar</button>
+                                <input id="submit" onclick="sendValues()" type="button" value="Submit">
                             </td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input type="text" value="1" class="teste"></td>
-                        </tr>
                     </tbody>
                 </table>
             </form>

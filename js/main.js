@@ -1,37 +1,33 @@
 const formulario = document.querySelector('form');
 const inputs = formulario.querySelectorAll('.formulario table tr td .validar');
-const rest = formulario.querySelector('tbody');
 
-formulario.addEventListener('submit', (e) =>{
-    handleSubmit(e);
-});
+function sendValues(){
+    const dadosValidos = verifyEmptyInputs();
 
-function handleSubmit(e){
-    const verifyInputs = verifyEmptyInputs();
-    const newTr = createTableRow();
+    if(dadosValidos[0]){
+        const fields = dadosValidos[1];
+        const id = fields[0];
+        const desc = fields[1];
+        const ncf = fields[2];
+        const corretiva = fields[3];
 
-    if(verifyInputs[0]){
-        // insertValues(verifyInputs[1],newTr);
+        
+        $.ajax({
+            type:"POST",
+            url: "ajaxjs.php",
+            data: {
+                ajax_id: id,
+                ajax_desc: desc,
+                ajax_ncf: ncf,
+                ajax_corretiva: corretiva
+            },
+            cache:false,
+            success: function(response){
+                alert('Enviado');
+                window.location.href="index.php"
+            }
+        });
     }
-}
-
-function createTableRow(){
-    const tr = document.createElement('tr');
-    return tr;
-}
-
-function createTableData(){
-    const td = document.createElement('td');
-    return td;
-}
-
-function insertValues(fields, tr){
-    for(let i = 0; i < fields.length; i++){
-        const td = createTableData();
-        td.innerText = fields[i];
-        tr.appendChild(td);
-    }
-    rest.appendChild(tr);
 }
 
 function verifyEmptyInputs(){
