@@ -1,6 +1,5 @@
 <?php
     require ('conexao.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,8 +22,9 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th >ID</th>
+                            <th>ID</th>
                             <th>Descrição</th>
+                            <th>Problema</th>
                             <th>NCF</th>
                             <th>Corretiva</th>
                             <th>Prazo</th>
@@ -33,26 +33,11 @@
                         </tr>
                         
                         <tr>
-                            <td><input type="text" name='id' id='id' class='validar'></td>
+                            <td>-</td>
                             <td><textarea name='descricao' id='desc' class='validar'></textarea></td>
-                            <td>
-                                <select name='ncf' id='ncf' class='validar'>
-                                    <option></option>
-                                    <?php
-                                        $sql2 = "SELECT * FROM ncf";
-                                        $sql2 = $pdo->prepare($sql2);
-                                        $sql2->execute();
-                                        $dado2 = $sql2->fetchAll();
-                                        foreach ($dado2 as $nivel) {
-                                            ?>
-                                            <option value="<?php echo $nivel['nome']?>"><?php echo $nivel['nome']?></option>
-                                            <?php
-                                        }
-                                    ?>
-                                </select>
-                            </td>
-                        
-                            <td><textarea name='corretiva' id='action' class='validar'></textarea></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>

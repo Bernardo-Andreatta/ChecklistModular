@@ -1,0 +1,52 @@
+
+<input type="text" name='id' id='id' class='validar'>
+
+----------------------------------------------------------
+
+<textarea name='Problema' id='action' class='validar'></textarea>
+
+----------------------------------------------------------------------
+
+  <select name='ncf' id='ncf' class='validar'>
+                                    <option></option>
+                                    <?php
+                                        $sql2 = "SELECT * FROM ncf";
+                                        $sql2 = $pdo->prepare($sql2);
+                                        $sql2->execute();
+                                        $dado2 = $sql2->fetchAll();
+                                        foreach ($dado2 as $nivel) {
+                                            ?>
+                                            <option value="<?php echo $nivel['nome']?>"><?php echo $nivel['nome']?></option>
+                                            <?php
+                                        }
+                                    ?>
+                                </select>
+
+----------------------------------------------------------------------
+
+<textarea name='corretiva' id='action' class='validar'></textarea>
+
+----------------------------------------
+
+
+const id = fields[0];
+const ncf = fields[2];
+const corretiva = fields[3];
+
+ajax_id: id,
+ajax_ncf: ncf,
+ajax_corretiva: corretiva
+
+
+--------------------------------
+
+$id = $_POST['ajax_id'];
+$corretiva = $_POST['ajax_corretiva'];
+$ncf = $_POST['ajax_ncf'];
+
+$sql = "SELECT prazo FROM ncf WHERE nome = :ncf";
+    $sql = $pdo->prepare($sql);
+    $sql->bindValue(":ncf", $ncf);
+    $sql->execute();
+    $prazo = $sql->fetch();
+

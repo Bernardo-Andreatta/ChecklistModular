@@ -6,20 +6,14 @@ function sendValues(){
 
     if(dadosValidos[0]){
         const fields = dadosValidos[1];
-        const id = fields[0];
-        const desc = fields[1];
-        const ncf = fields[2];
-        const corretiva = fields[3];
+        const desc = fields[0];
 
-        
         $.ajax({
             type:"POST",
             url: "ajaxjs.php",
             data: {
-                ajax_id: id,
-                ajax_desc: desc,
-                ajax_ncf: ncf,
-                ajax_corretiva: corretiva
+                ajax_desc: desc
+                
             },
             cache:false,
             success: function(response){
