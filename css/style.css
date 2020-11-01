@@ -16,7 +16,12 @@ thead{
     font-size: 18px;
     font-weight: bold;
 }
-
+.validar{
+    font-size: 14px;
+}
+.desc{
+    width: 369px;
+}
 .icon{
     margin-top: 20px;
     margin-right: 8px;
@@ -73,8 +78,9 @@ select, input{
     height: 40px;
 }
 
-.teste{
-    border: 0px;
+.transparent{
+    border-color: lightgrey;
+    border-radius: 4px;
 }
 
 .error-text{
@@ -102,6 +108,24 @@ button:active {
     transform: translateY(4px);
   }
 button:focus{
+    border: none;
+    outline:none;
+}
+
+.buttonDel{
+    margin-left: 5px;
+    outline:none;
+    border: none;
+}
+.buttonDel:hover{
+    color: red;
+}
+.buttonDel:active {
+    border: none;
+    outline:none;
+    transform: translateY(4px);
+  }
+.buttonDel:focus{
     border: none;
     outline:none;
 }
