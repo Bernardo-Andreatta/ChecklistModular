@@ -15,6 +15,7 @@
     </head>
     <body>
         <section class='container2'>
+            <img src="img/217-2173993_bullets-list-checkbox-comments-icon.png" class = "icon">
             <h1 class="titulo">Checklist</h1>
             <div class="clear"></div>
 
@@ -34,14 +35,20 @@
                         
                         <tr>
                             <td>-</td>
-                            <td><textarea name='descricao' id='desc' class='validar'></textarea></td>
+                            <td>
+                                <textarea name='descricao' id='desc' class='validar' placeholder='Digite aqui a descricao da proxima linha a ser adicionada!' onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Digite aqui a descricao da proxima linha a ser adicionada!'"></textarea>
+                            </td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>
-                                <input id="submit" onclick="sendValues()" type="button" value="Submit">
+                                <button id="submit" onclick="sendValues()" type="button" value="Submit"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check2-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z"/>
+                                </svg></button>
                             </td>
                         </tr>
                     </thead>
