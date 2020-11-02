@@ -35,6 +35,9 @@ function createTable(data){
                 </svg></button>
                 `;
             }
+            else if(j == [1] || j == [2] || j == [4]){
+                td.innerHTML = `<textarea disabled class="transparent">${data[i][j]}</textarea>`;
+            }
             else{
                 td.innerText = data[i][j];
             }
@@ -43,8 +46,8 @@ function createTable(data){
             tr.appendChild(td);
             
         }
-        
         tbody.appendChild(tr);
+        
     }
 }
 
@@ -59,6 +62,23 @@ function returnSentValues(){
     });
 }
 
+function calculateAderence(data){
+    var contA = 0;
+    var contB = 0;
+    var aderencia = 0;
+    for(let i = 0; i < data.length; i++){
+        for(let j = 0; j <= 7; j++){
+            if(data[i][6] == "Atingido"){
+                contA++;
+            }
+            else if(data[i][6] == "Nao aplicavel"){
+                contB ++;
+            }
+        }
+    }
+    aderencia = 100  *(contA / (data.length - contB));
+    return(aderencia);
+}
 
 function sendValues(){
     const dadosValidos = verifyEmptyInputs();
