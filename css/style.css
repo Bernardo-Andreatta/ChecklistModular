@@ -129,6 +129,24 @@ button:focus{
     border: none;
     outline:none;
 }
+a{
+    color: black;
+    margin-left: 5px;
+    outline:none;
+    border: none;
+}
+a:hover{
+    color: green;
+}
+a:active {
+    border: none;
+    outline:none;
+    transform: translateY(4px);
+  }
+a:focus{
+    border: none;
+    outline:none;
+}
 
 img{
     background: transparent;
