@@ -28,7 +28,7 @@
 
             <form method="POST" id="form1">
                 
-            <input type="hidden" name = "id" value= "<?php echo $id ?>">
+            <input type="hidden" name = "id" id="id" value= "<?php echo $id ?>">
 
                <textarea  name= "desc" id="desc" class='validar'><?php echo $checks[1] ?></textarea>
 

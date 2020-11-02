@@ -1,7 +1,7 @@
 <?php
     require('conexao.php');
 
-    $sql = $pdo->prepare('SELECT * FROM `checklist` WHERE `excluido` = 0');
+    $sql = $pdo->prepare('SELECT * FROM `checklist` WHERE `excluido` IS NULL');
     $sql->execute();
     $checks = $sql->fetchAll();
 
