@@ -4,12 +4,37 @@
     box-sizing: border-box;
 }
 
+input, textarea{
+    background: transparent;
+}
+
 table{
     text-align: center !important;
 }
 
 table td{
     vertical-align: middle !important;
+}
+
+thead{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.validar{
+    font-size: 14px;
+}
+
+.desc{
+    width: 369px;
+}
+
+.icon{
+    margin-top: 20px;
+    margin-right: 8px;
+    height: 50px;
+    width: 50px;
+    float: left;
 }
 
 .id{
@@ -23,13 +48,24 @@ table td{
 
 .titulo{
     float: left;
+    margin-top: 20px;
 }
 
-.btn-info{
+.add{
+    font-weight: bold;
+    font-size: 13px;
     float: right;
-    position: relative;
-    top: 10px;
+    margin-bottom: 2px;
 }
+
+.aderencia{
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    position: relative;
+    top: 33px;
+}
+
 
 .clear{
     clear: both;
@@ -58,7 +94,7 @@ select, input{
     height: 40px;
 }
 
-.teste{
+.transparent{
     border: 0px;
 }
 
@@ -74,12 +110,77 @@ select, input{
     100% { margin-left: 0rem; }
   }
 
-/* 
-table tr th:nth-of-type(2){
-    background-color: green;
+button{
+    outline:none;
+    border: none;
 }
 
-table tr th:nth-of-type(2) p{
-    overflow-y: scroll;
-    max-height: 100px;
-} */
+button:hover{
+    color: green;
+}
+
+button:active {
+    border: none;
+    outline:none;
+    transform: translateY(4px);
+}
+
+button:focus{
+    border: none;
+    outline:none;
+}
+
+.buttonDel{
+    margin-left: 5px;
+    outline:none;
+    border: none;
+}
+
+.buttonDel:hover{
+    color: red;
+}
+
+.buttonDel:active {
+    border: none;
+    outline:none;
+    transform: translateY(4px);
+}
+
+.buttonDel:focus{
+    border: none;
+    outline:none;
+}
+
+a{
+    color: black;
+    margin-left: 5px;
+    outline:none;
+    border: none;
+}
+
+a:hover{
+    color: green;
+}
+
+a:active {
+    border: none;
+    outline:none;
+    transform: translateY(4px);
+}
+
+a:focus{
+    border: none;
+    outline:none;
+}
+
+img{
+    background: transparent;
+}
+
+
+label{
+    font-weight: bold;
+}
+.inp{
+    width: 100%;
+}
