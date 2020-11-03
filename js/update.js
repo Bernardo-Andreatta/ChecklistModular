@@ -28,7 +28,7 @@ function updateValues(){
         cache:false,
         success: function(response){
             alert('Atualizado');
-            window.location.href="index.php"
+            window.location.href="../index.php"
         }
     });
     

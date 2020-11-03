@@ -1,6 +1,7 @@
 const formulario = document.querySelector('form');
 const inputs = formulario.querySelectorAll('.formulario table tr td .validar');
 const tbody = formulario.querySelector('tbody');
+const aderenceTitle = document.querySelector('.aderencia');
 
 returnSentValues();
 
@@ -23,7 +24,7 @@ function createTable(data){
             const td = createTd();
             
             if(j == [7]){
-                td.innerHTML = `<a class= "buttonU" href="Update.php?id=${data[i][0]}"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                td.innerHTML = `<a class= "buttonU" href="php/Update.php?id=${data[i][0]}"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                 </svg>
@@ -55,9 +56,15 @@ function returnSentValues(){
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "get-data.php",
+        url: "php/get-data.php",
         success: function(data){
            createTable(data);
+           const aderence = calculateAderence(data);
+           if(isNaN(aderence)){
+            aderenceTitle.innerText += ' 100%';
+           }else{
+            aderenceTitle.innerText += ` ${aderence.toFixed(2)}%`;  
+           }
         }
     });
 }
@@ -65,18 +72,15 @@ function returnSentValues(){
 function calculateAderence(data){
     var contA = 0;
     var contB = 0;
-    var aderencia = 0;
     for(let i = 0; i < data.length; i++){
-        for(let j = 0; j <= 7; j++){
-            if(data[i][6] == "Atingido"){
-                contA++;
-            }
-            else if(data[i][6] == "Nao aplicavel"){
-                contB ++;
-            }
+        if(data[i][6] == "Atingido"){
+            contA++;
+        }
+        else if(data[i][6] == "Nao aplicavel"){
+            contB ++;
         }
     }
-    aderencia = 100  *(contA / (data.length - contB));
+    let aderencia = 100  *(contA / (data.length - contB));
     return(aderencia);
 }
 
@@ -90,7 +94,7 @@ function sendValues(){
 
         $.ajax({
             type:"POST",
-            url: "ajaxjs.php",
+            url: "php/ajaxjs.php",
             data: {
                 ajax_desc: desc
             },
@@ -103,10 +107,11 @@ function sendValues(){
     }
 }
 
+
 function deleteValue(id){
     $.ajax({
         type:"POST",
-        url: "ajaxDel.php",
+        url: "php/ajaxDel.php",
         data: {
             ajax_id : id
         },

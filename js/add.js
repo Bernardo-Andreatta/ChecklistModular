@@ -19,7 +19,7 @@ function addNCF(){
         cache:false,
         success: function(response){
             alert('Adicionado');
-            window.location.href="index.php"
+            window.location.href="../index.php"
         }
     });
     

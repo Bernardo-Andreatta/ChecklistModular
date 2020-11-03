@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+input, textarea{
+    background: transparent;
+}
+
 table{
     text-align: center !important;
 }
@@ -28,7 +32,6 @@ thead{
 .icon{
     margin-top: 20px;
     margin-right: 8px;
-    margin-bottom: 30px;
     height: 50px;
     width: 50px;
     float: left;
@@ -48,11 +51,21 @@ thead{
     margin-top: 20px;
 }
 
-.btn-info{
+.add{
+    font-weight: bold;
+    font-size: 13px;
     float: right;
-    position: relative;
-    top: 10px;
+    margin-bottom: 2px;
 }
+
+.aderencia{
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    position: relative;
+    top: 33px;
+}
+
 
 .clear{
     clear: both;
@@ -164,12 +177,7 @@ img{
     background: transparent;
 }
 
-.add{
-    font-weight: bold;
-    font-size: 13px;
-    float: right;
-    margin-top: 70px;
-}
+
 label{
     font-weight: bold;
 }
