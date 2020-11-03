@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 input, textarea{
@@ -71,12 +72,15 @@ thead{
     clear: both;
 }
 
-table tr th:first-child{
-    width: 4%;
+tbody {
+    display:block;
+    height: 600px;
+    overflow:auto;
 }
-
-table tr td:first-child input{
-    width: 100%;
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
 }
 
 .confirm{
