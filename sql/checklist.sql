@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2020 às 21:47
+-- Tempo de geração: 03-Nov-2020 às 03:24
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.10
 
@@ -34,16 +34,9 @@ CREATE TABLE `checklist` (
   `ncf` varchar(255) DEFAULT NULL,
   `corretiva` text DEFAULT NULL,
   `prazo` varchar(255) DEFAULT NULL,
-  `situacao` int(11) DEFAULT NULL,
-  `excluido` tinyint(1) NOT NULL
+  `situacao` varchar(255) DEFAULT NULL,
+  `excluido` datetime(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `checklist`
---
-
-INSERT INTO `checklist` (`id`, `descricao`, `problema`, `ncf`, `corretiva`, `prazo`, `situacao`, `excluido`) VALUES
-(1, 'teste', 'teset', '1', 'corrigi', '2 dias', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -54,17 +47,9 @@ INSERT INTO `checklist` (`id`, `descricao`, `problema`, `ncf`, `corretiva`, `pra
 CREATE TABLE `ncf` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `prazo` varchar(255) NOT NULL
+  `prazo` varchar(255) NOT NULL,
+  `excluido` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `ncf`
---
-
-INSERT INTO `ncf` (`id`, `nome`, `prazo`) VALUES
-(1, 'Medio', '5 dias\r\n'),
-(2, 'Fraco', '1 dia'),
-(3, 'Grande', '10 dias');
 
 --
 -- Índices para tabelas despejadas
@@ -90,13 +75,13 @@ ALTER TABLE `ncf`
 -- AUTO_INCREMENT de tabela `checklist`
 --
 ALTER TABLE `checklist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `ncf`
 --
 ALTER TABLE `ncf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
