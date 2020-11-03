@@ -33,7 +33,7 @@
                 <input type="hidden" name = "id" id="id" value= "<?php echo $id ?>">
                 
                 <div class="form-group">
-                <label for="User">Descricao</label>
+                <label for="User">Descrição</label>
                 <textarea  name= "desc" id="desc" class='validar'><?php echo $checks[1] ?></textarea>
                 </div>
 
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="form-group">
-                <label for="User">Nao Conformidade</label>
+                <label for="User">Não Conformidade</label>
                 <select name='ncf' id='ncf' class='validar'>
                 <option></option>
                         <?php
@@ -62,16 +62,16 @@
                 </div>
 
                 <div class="form-group">
-                <label for="User">Acao corretiva</label>
+                <label for="User">Ação corretiva</label>
                 <textarea name="acao" id="acao" class='validar'><?php echo $checks[4] ?></textarea>
                 </div>
 
                 <div class="form-group">
-                <label for="User">Situacao</label>
+                <label for="User">Situação</label>
                     <select name="sit" id="sit" class='validar'>
                         <option value="Atingido">Atingido</option>
-                        <option value="Nao atingido">Nao atingido</option>
-                        <option value="Nao aplicavel">Nao aplicavel</option>
+                        <option value="Nao atingido">Não atingido</option>
+                        <option value="Nao aplicavel">Não aplicavel</option>
                     </select>
                     
 
